@@ -67,6 +67,7 @@
 				"scapigliato.odoo-snippets",
 				// my addons
 				"donjayamanne.githistory",
+				"mhutchie.git-graph",
 				//"foam.foam-vscode",
 				"gruntfuggly.todo-tree",
 				"mechatroner.rainbow-csv",

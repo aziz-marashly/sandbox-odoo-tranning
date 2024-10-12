@@ -6,6 +6,4 @@ class OrderTag(models.Model):
 
     name = fields.Char("Name", requiered=True)
     color = fields.Integer("Color")
-
-
-    order_ids = fields.Many2many('meal.order')
+    # order_ids = fields.Many2many('meal.order', "Order")

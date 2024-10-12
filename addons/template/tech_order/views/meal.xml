@@ -63,7 +63,7 @@
 
         <menuitem name="Meals" id="order_meal_menu"
         action="tech_order.order_meal_window_action"
-        parent="order_base_meal_menu"/>
+        parent="order_base_meal_menu" sequence="20"/>
         <menuitem
             id="order_meal_category_menu"
             name="Meal Category"

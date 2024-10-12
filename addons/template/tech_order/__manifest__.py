@@ -24,6 +24,8 @@ Long description of module's purpose
     'data': [
         'security/ir.model.access.csv',
         'views/meal.xml',
+        'views/order.xml',
+        'views/order_tag.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
