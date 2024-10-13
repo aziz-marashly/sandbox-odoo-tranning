@@ -8,15 +8,18 @@ class Order(models.Model):
     _description = "Meal Order "
     _order = "name"
 
-    name = fields.Char(string="Name", required=True,
-                       default=lambda self: _('New'))
+    name = fields.Char(string="Name", required=True, default=lambda self: _('New'))
     total_price = fields.Float("Price", copy=False)
-    order_type = fields.Selection([('internal', 'Internal'), ('external', 'External')],
-                                  string="Type", required=True,
-                                  default="internal")
+    order_type = fields.Selection(
+        [('internal', 'Internal'), ('external', 'External')],
+        string="Type",
+        required=True,
+        default="internal",
+    )
     note = fields.Text("NOTE")
-    order_date = fields.Date("Order Date", copy=False, default=fields.datetime.now().date(),
-                             readonly=False)
+    order_date = fields.Date(
+        "Order Date", copy=False, default=fields.datetime.now().date(), readonly=False
+    )
     customer_id = fields.Many2one("res.partner", string="Customer")
     is_urgent = fields.Boolean("Is Urgent", copy=False)
     active = fields.Boolean(default=True)
@@ -34,4 +37,3 @@ class Order(models.Model):
         for record in self:
             if record.order_date > datetime.now().date():
                 raise ValidationError("Order Date Must be in present or past")
-
